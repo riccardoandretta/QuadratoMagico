@@ -21,21 +21,31 @@ public class Quadrato {
 		this.matrice = new ArrayList<Integer>(q.getMatrice());
 	}
 	
+	private List<Integer> getMatrice() {
+		return matrice;
+	}
+
 	private boolean checkRows() {
+		//TODO
+		return false;
 		
 	}
 	
 	private boolean checkColumns() {
+		//TODO
+		return false;
 		
 	}
 	
 	private boolean checkDiagonals() {
+		//TODO
+		return false;
 		
 	}
 	
 	public boolean isValid() {
 		// quadrato e' una soluzione valida
-		return checkRows() & checkColumns() & checkDiagonals();
+		return checkRows() & checkColumns() & checkDiagonals(); //se tutti ritornano true allora ritorna true
 	}
 	
 	public boolean contains(int i) {
@@ -47,6 +57,6 @@ public class Quadrato {
 	}
 	
 	public void remove(int i) {
-		this.matrice.remove(Integer.valueOf(i));
+		this.matrice.remove(Integer.valueOf(i)); // se mettessi solo i non funzionerebbe: rimuoverebbe l'oggetto in posizione i, e non il valore i!
 	}
 }
