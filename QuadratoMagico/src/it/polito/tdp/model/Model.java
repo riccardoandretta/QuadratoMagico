@@ -9,7 +9,7 @@ public class Model {
 
 	public List<Quadrato> findMagicSquare(int n) {
 
-		soluzione = new ArrayList<Quadrato>();
+		soluzione = new ArrayList<Quadrato>(); // ogni volta che chiamo il metodo creo una nuova soluzione
 
 		int step = 0;
 		Quadrato parziale = new Quadrato(n);
@@ -20,14 +20,20 @@ public class Model {
 	}
 
 	private void recursive(int step, Quadrato parziale, int dim) {
+		/* DEBUG
+		 * 
+		 * System.out.println(parziale);
+		 * 
+		 * */
 
-		System.out.println(parziale);
-
+		// Condizione di terminazione
 		if (step >= dim * dim) {
 			// soluzione completa
 			if (parziale.isValid()) {
 				// devo salvare la soluzione completa
-				soluzione.add(new Quadrato(parziale));
+				soluzione.add(new Quadrato(parziale)); // Se salvo 'parziale' salvo solo il riferimento e non mi serve,
+														// perchè 'parziale' cambia nel tempo
+														// ---> devo fare una DEEP COPY
 			}
 		}
 
